@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    font-family: Epilogue, sans-serif;
+}
+
+.attribution {
+    display: none;
+}
+
+:root {
+    --almost-white: hsl(0, 0%, 98%);
+    --medium-gray: hsl(0, 0%, 41%);
+    --almost-black: hsl(0, 0%, 8%);
+
+    --font-size: 18px;
+}
+
+body {
+    width: 375px;
+    position: relative;
+    background-color: var(--almost-white);
+}
+
+main {
+    display: flex;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.first-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px;
+    padding-top: 35px;
+}
+
+.logo {
+    width: fit-content;
+}
+
+.menu {
+    width: fit-content;
+}
+
+.menu-inside {
+    display: none;
+}
+
+.header {
+    font-size: 34px;
+    text-align: center;
+    width: 100%;
+    color:hsl(0, 0%, 8%);
+    margin-top: 40px;
+}
+
+.description {
+    font-weight: 500;
+    padding-left: 24px;
+    padding-right: 24px;
+    line-height: 50px;
+    font-size: 32px;
+    color: hsl(0, 0%, 41%);
+    text-align: center;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.btn-learn {
+    padding: 45px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    background-color: var(--almost-black);
+    color: var(--almost-white);
+    border-radius: 35px;
+    font-size: 35px;
+    margin: auto;
+    font-weight: 500;
+    margin-bottom: 110px;
+}
+
+.sponsor {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: space-between;
+    height: 37.5px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.sidenav {
+    position: absolute;
+    background-color: var(--almost-white);
+    height: 100%;
+}
