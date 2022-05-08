@@ -14,6 +14,14 @@
     --almost-black: hsl(0, 0%, 8%);
 
     --font-size: 18px;
+
+    /*sidenav*/
+    /* --sidenav-width-close: 0; goes to 100 */
+    /* --sidenav-right-close: -30px; goes to 0px */
+    /* --sidenav-width-open: 100; */
+    /* --sidenav-right-open: 0px; */
+    --sidenav-width: 0;
+    --sidenav-right: 0px;
 }
 
 body {
@@ -102,11 +110,16 @@ main {
     position: absolute; /*beware!*/
     background-color: var(--almost-white);
     height: 100%;
-    width: fit-content;
+    /* width: fit-content; */
+    width: var(--sidenav-width);
     padding: 10px;
     /* right: -375px; */
-    right: -500px;
-    padding-right: 30px;
+    right: var(--sidenav-right);
+    /* padding-right: 30px; */
+    transition: 0.5s ease;
+    /* transition-delay: 2s; */
+
+    overflow-x: hidden;
 }
 
 .close {

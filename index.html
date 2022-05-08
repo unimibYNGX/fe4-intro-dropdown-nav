@@ -16,29 +16,30 @@
   </style>
 </head>
 <body>
-  <main>
-    <div class="sidenav">
-      <div class="close"><img src="images/icon-close-menu.svg" alt=""></div>
-      <div class="features">
-        <div class="txt-features">Features</div>
-        <img src="images/icon-arrow-down.svg" class="icon-arrow-down" alt="">
-      </div>
-      <div class="company">
-        <div class="txt-company">Company</div>
-        <img src="images/icon-arrow-down.svg" class="icon-arrow-down" alt="">
-      </div>
-      <div class="careers">Careers</div>
-      <div class="about">About</div>
-      <div class="btns">
-        <div class="btn-login">Login</div>
-        <div class="btn-register"><div class="txt-register">Register</div></div>
-      </div>
+  <div class="sidenav">
+    <div class="close" id="close" onclick="sidenav_toggle()"><img src="images/icon-close-menu.svg" alt=""></div>
+    <div class="features">
+      <div class="txt-features">Features</div>
+      <img src="images/icon-arrow-down.svg" class="icon-arrow-down" alt="">
     </div>
+    <div class="company">
+      <div class="txt-company">Company</div>
+      <img src="images/icon-arrow-down.svg" class="icon-arrow-down" alt="">
+    </div>
+    <div class="careers">Careers</div>
+    <div class="about">About</div>
+    <div class="btns">
+      <div class="btn-login">Login</div>
+      <div class="btn-register"><div class="txt-register">Register</div></div>
+    </div>
+  </div>
+
+  <main>
     <div class="container">
 
       <div class="first-row">
         <div class="logo"><img src="images/logo.svg" alt=""></div>
-        <div class="menu"><img src="images/icon-menu.svg" alt=""></div>
+        <div class="menu" id="menu" onclick="sidenav_toggle()"><img src="images/icon-menu.svg" alt=""></div>
       </div>
       <div class="hero"><img src="images/image-hero-mobile.png" alt=""></div>
         
@@ -64,5 +65,34 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <script>
+    var r = document.querySelector(':root');
+
+    function myFunction_get() {
+      var rs = getComputedStyle(r);
+      console.log("The value of --sidenav-width is: " + rs.getPropertyValue('--sidenav-width'));
+    } /*works!*/
+
+    function sidenav_toggle() {
+      var rs = getComputedStyle(r); 
+      console.clear();
+      console.log("width before: " + rs.getPropertyValue('--sidenav-width'));
+      console.log("right before: " + rs.getPropertyValue('--sidenav-right'));
+      if(rs.getPropertyValue('--sidenav-width') == 0) {
+        r.style.setProperty('--sidenav-width', '1');
+        r.style.setProperty('--sidenav-right', '0px');
+      }
+      else if(rs.getPropertyValue('--sidenav-width') == 1){
+        r.style.setProperty('--sidenav-width', '0');
+        r.style.setProperty('--sidenav-right', '0px');
+      }
+      console.log("width now: " + rs.getPropertyValue('--sidenav-width'));
+      console.log("right now: " + rs.getPropertyValue('--sidenav-right'));
+      // var x = document.getElementById('menu');
+    }
+
+
+  </script>
 </body>
 </html>
