@@ -2,6 +2,7 @@
 
 * {
     font-family: Epilogue, sans-serif;
+    user-select: none;
 }
 
 .attribution {
@@ -23,13 +24,42 @@
 
     /* --sidenav-width: 0; */
     --sidenav-width: 0;
-    
+    --sidenav-right: -240px;
 
-    /* --sidenav-right: 0px; */
+    --img-logo_width: 130px;
+    --menu_display: block;
+    --header_font-size: 27px;
+    --description_font-size: 26px;
+
+    --img-sponsor_height: 28px;
+    --sidenav-items_font-size: 27.5px;
+    --btn-login_font-size: 27.5px;
+}
+
+@media only screen and (min-width: 615px) {
+    .img-logo {
+        --img-logo_width: 100px;
+    }
+    .menu {
+        --menu_display: none;
+    }
+}
+
+.img-sponsor {
+    height: var(--img-sponsor_height);
+}
+
+.img-logo {
+    width: var(--img-logo_width);
+    height: var(--img-logo_height);
+}
+
+.img-hero {
+    width: 615px;
 }
 
 body {
-    width: fit-content;
+    width: 375px;
     position: relative;
     background-color: var(--almost-white);
     padding: 0;
@@ -45,6 +75,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     height: 100%;
+    width: 615px;
 }
 
 .first-row {
@@ -60,8 +91,11 @@ main {
     width: fit-content;
 }
 
+
+
 .menu {
     width: fit-content;
+    display: var(--menu_display);
 }
 
 .menu-inside {
@@ -69,7 +103,7 @@ main {
 }
 
 .header {
-    font-size: 34px;
+    font-size: var(--header_font-size); /*34px*/
     text-align: center;
     width: 100%;
     color:hsl(0, 0%, 8%);
@@ -81,21 +115,21 @@ main {
     padding-left: 24px;
     padding-right: 24px;
     line-height: 50px;
-    font-size: 32px;
+    font-size: var(--description_font-size);/*32*/
     color: hsl(0, 0%, 41%);
     text-align: center;
     width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
 }
 
 .btn-learn {
-    padding: 45px;
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     background-color: var(--almost-black);
     color: var(--almost-white);
-    border-radius: 35px;
-    font-size: 35px;
+    border-radius: 28px;
+    font-size: 27px;
     margin: auto;
     font-weight: 500;
     margin-bottom: 110px;
@@ -134,7 +168,7 @@ main {
 .features, .company, .careers, .about,
 .btn-login, .btn-register {
     color:hsl(0, 0%, 41%);
-    font-size: 36px;
+    font-size: var(--sidenav-items_font-size); /*27.5px*/
     font-weight: 500;
     padding-top: 45px;
     padding-right: 190px;
@@ -175,18 +209,18 @@ main {
 }
 
 .btn-login {
-    font-size: 32px;
+    font-size: var(--sidenav-items_font-size); /*32px*/
 }
 
 .btn-register {
-    font-size: 32px;
+    font-size: var(--sidenav-items_font-size);
     padding: 25px;
     margin: 40px;
     margin-top: 35px;
     padding-left: 90px;
     padding-right: 90px;
     border-radius: 30px;
-    border: 4px solid var(--medium-gray);
+    border: 2.5px solid var(--medium-gray);
 }
 
 .logo, .menu, .btn-learn, .features,

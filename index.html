@@ -61,10 +61,10 @@
     <div class="container">
 
       <div class="first-row">
-        <div class="logo"><img src="images/logo.svg" alt=""></div>
+        <div class="logo"><img src="images/logo.svg" class="img-logo" alt=""></div>
         <div class="menu" id="menu" onclick="sidenav_toggle()"><img src="images/icon-menu.svg" alt=""></div>
       </div>
-      <div class="hero"><img src="images/image-hero-mobile.png" alt=""></div>
+      <div class="hero"><img src="images/image-hero-mobile.png" class="img-hero" alt=""></div>
         
       <div class="header">
         <h1>Make remote work</h1>
@@ -76,10 +76,10 @@
       </div>
       <div class="btn-learn"><div class="txt-learn">Learn more</div></div>
       <div class="sponsor">
-        <img src="images/client-databiz.svg" alt="">
-        <img src="images/client-audiophile.svg" alt="">
-        <img src="images/client-meet.svg" alt="">
-        <img src="images/client-maker.svg" alt="">
+        <img class="img-sponsor" src="images/client-databiz.svg" alt="">
+        <img class="img-sponsor" src="images/client-audiophile.svg" alt="">
+        <img class="img-sponsor" src="images/client-meet.svg" alt="">
+        <img class="img-sponsor" src="images/client-maker.svg" alt="">
       </div>
     </div>
   </main>
@@ -107,12 +107,12 @@
       console.log("right before: " + rs.getPropertyValue('--sidenav-right'));
       if(!isOpen) {
         r.style.setProperty('--sidenav-width', '400px');
-        r.style.setProperty('--sidenav-right', '0px');
+        r.style.setProperty('--sidenav-right', '-240px');
         isOpen = true;
       }
       else{
         r.style.setProperty('--sidenav-width', '0px');
-        r.style.setProperty('--sidenav-right', '0px');
+        r.style.setProperty('--sidenav-right', '-240px');
         isOpen = false;
       }
       console.log("width now: " + rs.getPropertyValue('--sidenav-width'));
