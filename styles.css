@@ -116,9 +116,7 @@ main {
     background-color: var(--almost-white);
     height: 100%;
     width: var(--sidenav-width);
-    /* padding: 10px; */
     right: var(--sidenav-right);
-    /* padding-right: 30px; */
     transition: 0.5s ease;
 
     overflow-x: hidden;
@@ -160,17 +158,19 @@ main {
 .btns {
     display: flex;
     flex-wrap: wrap;
-    padding-top: 70px;
+    padding-top: 60px;
 }
 
 .btns .btn-login{
     padding: 0;
-    width: 100%;
+    width: fit-content;
     text-align: center;
+    margin: auto;
+    margin-left: 160px;
 }
 
 .btns .btn-register{
-    width: 100%;
+    width: fit-content;
     text-align: center;
 }
 
@@ -181,16 +181,19 @@ main {
 .btn-register {
     font-size: 32px;
     padding: 25px;
-    margin: 20px;
+    margin: 40px;
     margin-top: 35px;
-    /* background-color: lightgray; */
+    padding-left: 90px;
+    padding-right: 90px;
     border-radius: 30px;
     border: 4px solid var(--medium-gray);
 }
 
 .logo, .menu, .btn-learn, .features,
 .company, .careers, .about, .btn-login, 
-.btn-register, .close {
+.btn-register, .close,
+.todolist, .calendar, .reminders, .planning,
+.history, .ourteam, .blog {
     cursor: pointer;
 }
 
@@ -212,18 +215,39 @@ main {
     height: 35px;
 }
 
-/* .features-inside {
-    display: flex;
-    flex-wrap: wrap;
-} */
-
-.features-inside {
-    /* display: flex; */
-    /* flex-wrap: wrap; */
+.panel {
     padding-left: 90px;
     font-size: 30px;
     color: var(--medium-gray);
     font-weight: 500;
+
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+
+    /* .panel {
+        text-align: left;
+        font-weight: 300;
+        margin: var(--panel_margin); 
+        padding-top: 5px;
+        padding-right: 18px;
+        color: hsl(240, 6%, 50%);
+        overflow: hidden;
+        font-size: 12px;
+        opacity: 0;
+        max-height: 0;
+        transition: all 0.5s ease;
+    }*/
+}
+
+.panel.active{
+    opacity: 1;
+    max-height: 296.5px;
+}
+
+.company-inside.panel.active {
+    max-height: 196.5px;
 }
 
 .todolist, .calendar, .reminders, .planning {
@@ -231,15 +255,12 @@ main {
     flex-wrap: wrap;
     width: 100%;
     margin-top: 35px;
-    /* margin-left: 30px; */
-    /* margin-right: auto; */
 }
 
 .txt-todolist, .txt-calendar, .txt-reminders, .txt-planning {
     margin-top: 6px;
     margin-left: 60px;
-    position: absolute;
-    /* text-overflow: clip; */
+    /* position: absolute; */
     white-space: nowrap;
 }
 
@@ -248,16 +269,10 @@ main {
     color: var(--medium-gray);
     font-weight: 500;
     padding-left: 90px;
-    padding-top: 35px;
 }
 
 .history, .ourteam, .blog {
     margin-top: 35px;
-    /* position: absolute; */
     display: flex;
     white-space: nowrap;
-}
-
-.careers {
-    padding-top: 70px;
 }

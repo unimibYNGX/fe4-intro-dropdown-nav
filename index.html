@@ -18,11 +18,11 @@
 <body>
   <div class="sidenav">
     <div class="close" id="close" onclick="sidenav_toggle()"><img src="images/icon-close-menu.svg" alt=""></div>
-    <div class="features">
+    <div class="features accordion">
       <div class="txt-features">Features</div>
       <img src="images/icon-arrow-down.svg" class="icon-arrow-down" alt="">
     </div>
-    <div class="features-inside">
+    <div class="features-inside panel">
       <div class="todolist">
         <img class="icon-todolist" src="images/icon-todo.svg" alt="">
         <div class="txt-todolist">Todo List</div>
@@ -40,11 +40,11 @@
         <div class="txt-planning">Planning</div>
       </div>
     </div>
-    <div class="company">
+    <div class="company accordion">
       <div class="txt-company">Company</div>
       <img src="images/icon-arrow-down.svg" class="icon-arrow-down" alt="">
     </div>
-    <div class="company-inside">
+    <div class="company-inside panel">
       <div class="history">History</div>
       <div class="ourteam">Our Team</div>
       <div class="blog">Blog</div>
@@ -120,7 +120,17 @@
       // var x = document.getElementById('menu');
     }
 
+    var acc = document.getElementsByClassName("accordion");
+    var i;
 
+    for(i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        panel.classList.toggle("active");
+      });
+    }
   </script>
 </body>
 </html>
