@@ -101,6 +101,7 @@
 
     function sidenav_toggle() {
       var rs = getComputedStyle(r); 
+      var acc = document.getElementsByClassName("accordion");
       
       console.clear();
       console.log("width before: " + rs.getPropertyValue('--sidenav-width'));
@@ -113,19 +114,21 @@
       else{
         r.style.setProperty('--sidenav-width', '0px');
         r.style.setProperty('--sidenav-right', '0px');
+        console.log("removing active...");
+        acc[0].nextElementSibling.classList.remove("active");
+        acc[1].nextElementSibling.classList.remove("active");
         isOpen = false;
       }
       console.log("width now: " + rs.getPropertyValue('--sidenav-width'));
       console.log("right now: " + rs.getPropertyValue('--sidenav-right'));
       // var x = document.getElementById('menu');
     }
-
+    
     var acc = document.getElementsByClassName("accordion");
     var i;
 
     for(i = 0; i < acc.length; i++) {
       acc[i].addEventListener("click", function() {
-
         this.classList.toggle("active");
         var panel = this.nextElementSibling;
         panel.classList.toggle("active");
