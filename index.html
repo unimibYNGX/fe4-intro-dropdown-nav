@@ -17,7 +17,7 @@
 </head>
 <body>
   <div class="sidenav">
-    <div class="close" id="close" onclick="sidenav_toggle()"><img src="images/icon-close-menu.svg" alt=""></div>
+    <div class="close" id="close" onclick="sidenav_toggle()"><img class="img-close" src="images/icon-close-menu.svg" alt=""></div>
     <div class="features accordion">
       <div class="txt-features">Features</div>
       <img src="images/icon-arrow-down.svg" class="icon-arrow-down" alt="">
@@ -62,7 +62,7 @@
 
       <div class="first-row">
         <div class="logo"><img src="images/logo.svg" class="img-logo" alt=""></div>
-        <div class="menu" id="menu" onclick="sidenav_toggle()"><img src="images/icon-menu.svg" alt=""></div>
+        <div class="menu" id="menu" onclick="sidenav_toggle()"><img class="img-menu" src="images/icon-menu.svg" alt=""></div>
       </div>
       <div class="hero"><img src="images/image-hero-mobile.png" class="img-hero" alt=""></div>
         
@@ -106,13 +106,13 @@
       console.log("width before: " + rs.getPropertyValue('--sidenav-width'));
       console.log("right before: " + rs.getPropertyValue('--sidenav-right'));
       if(!isOpen) {
-        r.style.setProperty('--sidenav-width', '400px');
-        r.style.setProperty('--sidenav-right', '-240px');
+        r.style.setProperty('--sidenav-width', '240px');
+        r.style.setProperty('--sidenav-right', '0px');
         isOpen = true;
       }
       else{
         r.style.setProperty('--sidenav-width', '0px');
-        r.style.setProperty('--sidenav-right', '-240px');
+        r.style.setProperty('--sidenav-right', '0px');
         isOpen = false;
       }
       console.log("width now: " + rs.getPropertyValue('--sidenav-width'));
