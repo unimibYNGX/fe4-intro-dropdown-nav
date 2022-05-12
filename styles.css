@@ -35,18 +35,29 @@
     --btn-learn_margin-left: auto;
     --btn-learn_margin-right: auto;
     --sponsor_width: 100%;
-    --hero_width: inherit;
-    --sponsor_padding: 25px;
-    --description_padding: 24px;
-    --desktop_width: 100%;
+    /* --hero_width: inherit; */
+    --sponsor_padding: 0px;
+    --description_padding: 0px;
+    --desktop_width: auto;
     --header-mobile_display: block;
     --header-desktop_display: none;
     --leftright_width: none;
+    
+    --description_text-align: center;
+    --desktop_padding: 0px;
+    --desktop_padding-left: 0px;
+    --desktop_padding-right: 0px; 
+    --desktop_margin: auto;
+    --btn-learn_margin-bottom: 50px;
+    --description_padding-bottom: 25px;
+    --description_display: block;
+    --description-desktop_display: none;
+    --hero_width: 100%;
 }
 
-@media only screen and (min-width: 550px) {
+@media only screen and (min-width: 1100px) {
     .img-logo {
-        --img-logo_width: 100px;
+        --img-logo_width: 90px;
     }
     .menu {
         --menu_display: none;
@@ -63,23 +74,34 @@
     .description {
         --description_width: 100%;
         --description_padding: 0px;
+        --description_text-align: start;
+        --description_padding-bottom: 40px;
+        --description_display: none;
+    }
+    .description.description-desktop {
+        --description-desktop_display: block;
     }
     .btn-learn {
         --btn-learn_width: fit-content;
-        --btn-learn_margin-left: 15%;
+        --btn-learn_margin-left: 0;
+        --btn-learn_margin-bottom: 125px;
     }
     .sponsor {
         --sponsor_width: 100%;
         --sponsor_padding: 0px;
     }
     .hero {
-        --hero_width: 500px;
+        /* --hero_width: 500px; */
     }
     .desktop {
         --desktop_width: 100%;
+        --desktop_padding: 50px;
+        --desktop_padding-left: 140px;
+        --desktop_padding-right: 100px; 
+        --desktop_margin: 0;
     }
     .header {
-        --header_font-size: 30px;
+        --header_font-size: 29px;
     }
     .header-mobile {
         --header-mobile_display: none;
@@ -88,11 +110,15 @@
         --header-desktop_display: block;
     }
     .left, .right {
-        --leftright_width: 40%;
+        --leftright_width: 387px;
     }
     .left {
         --left_margin: 0;
     }
+}
+
+.hero {
+    width: var(--hero_width);
 }
 
 .header-mobile {
@@ -101,6 +127,7 @@
 
 .header-desktop {
     display: var(--header-desktop_display);
+    text-align: start;
 }
 
 .left, .right {
@@ -116,10 +143,13 @@
 }
 
 .desktop {
-    width: var(--desktop_width); /*50%*/
+    width: var(--desktop_width); 
+    margin: var(--desktop_margin);
     display: flex;
     flex-wrap: wrap;
-    padding: 50px;
+    padding: var(--desktop_padding); /*50px for desktop*/
+    padding-left: var(--desktop_padding-left);
+    padding-right: var(--desktop_padding-right);
     justify-content: space-between;
     /* padding-right: 0; */
     /* padding-left: 150px; */
@@ -157,7 +187,7 @@ html, body {
     padding: 0;
     height: 100%;
     margin: 0;
-    position: fixed;
+    /* position: fixed; */
 }
 
 main {
@@ -186,14 +216,6 @@ main {
     width: fit-content;
 }
 
-.hero {
-    /* width: var(--hero_width); */
-    /* position: absolute; */
-    /* right: 0px; */
-    /* padding: 100px; */
-    /* padding-top: 0px; */
-}
-
 .menu {
     width: fit-content;
     display: var(--menu_display);
@@ -212,15 +234,19 @@ main {
 }
 
 .description {
+    display: var(--description_display);
     font-weight: 500;
     padding-left: var(--description_padding); /*both 24px*/
     padding-right: var(--description_padding);
     line-height: 27px;
     font-size: var(--description_font-size);/*32*/
     color: hsl(0, 0%, 41%);
-    text-align: center;
+    text-align: var(--description_text-align); /*mobile: center*/
     width: var(--description_width);
-    padding-bottom: 25px;
+    padding-bottom: var(--description_padding-bottom); /*mobile 25px*/
+}
+.description.description-desktop {
+    display: var(--description-desktop_display);
 }
 
 .btn-learn {
@@ -233,7 +259,7 @@ main {
     font-size: 17.5px;
     /* margin: auto; */
     font-weight: 500;
-    margin-bottom: 50px;
+    margin-bottom: var(--btn-learn_margin-bottom); /*mobile 50px*/
     width: var(--btn-learn_width);
     margin-left: var(--btn-learn_margin-left);
     margin-right: var(--btn-learn_margin-right);
