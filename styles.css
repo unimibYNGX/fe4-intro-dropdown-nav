@@ -26,15 +26,103 @@
     --img-sponsor_height: 17.5px;
     --sidenav-items_font-size: 17.5px;
     --btn-login_font-size: 17.5px;
+
+    --img-hero-mobile_display: block;
+    --img-hero-desktop_display: none;
+    --header_width: 100%;
+    --description_width: 100%;
+    --btn-learn_width: fit-content;
+    --btn-learn_margin-left: auto;
+    --btn-learn_margin-right: auto;
+    --sponsor_width: 100%;
+    --hero_width: inherit;
+    --sponsor_padding: 25px;
+    --description_padding: 24px;
+    --desktop_width: 100%;
+    --header-mobile_display: block;
+    --header-desktop_display: none;
+    --leftright_width: none;
 }
 
-@media only screen and (min-width: 615px) {
+@media only screen and (min-width: 550px) {
     .img-logo {
         --img-logo_width: 100px;
     }
     .menu {
         --menu_display: none;
     }
+    .img-hero-mobile {
+        --img-hero-mobile_display: none;
+    }
+    .img-hero-desktop {
+        --img-hero-desktop_display: block;
+    }
+    .header {
+        --header_width: 100%;
+    }
+    .description {
+        --description_width: 100%;
+        --description_padding: 0px;
+    }
+    .btn-learn {
+        --btn-learn_width: fit-content;
+        --btn-learn_margin-left: 15%;
+    }
+    .sponsor {
+        --sponsor_width: 100%;
+        --sponsor_padding: 0px;
+    }
+    .hero {
+        --hero_width: 500px;
+    }
+    .desktop {
+        --desktop_width: 100%;
+    }
+    .header {
+        --header_font-size: 30px;
+    }
+    .header-mobile {
+        --header-mobile_display: none;
+    }
+    .header-desktop {
+        --header-desktop_display: block;
+    }
+    .left, .right {
+        --leftright_width: 40%;
+    }
+    .left {
+        --left_margin: 0;
+    }
+}
+
+.header-mobile {
+    display: var(--header-mobile_display);
+}
+
+.header-desktop {
+    display: var(--header-desktop_display);
+}
+
+.left, .right {
+    width: var(--leftright_width); /*40 for desktop!*/
+}
+
+.left {
+    margin: 0;
+}
+
+.txt-learn {
+    width: fit-content;
+}
+
+.desktop {
+    width: var(--desktop_width); /*50%*/
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    justify-content: space-between;
+    /* padding-right: 0; */
+    /* padding-left: 150px; */
 }
 
 .img-menu {
@@ -51,8 +139,15 @@
     height: var(--img-logo_height);
 }
 
-.img-hero {
+.img-hero-mobile {
     width: 100%;
+    display: var(--img-hero-mobile_display);
+}
+
+.img-hero-desktop {
+    
+    width: 100%;
+    display: var(--img-hero-desktop_display);
 }
 
 html, body {
@@ -92,7 +187,11 @@ main {
 }
 
 .hero {
-    width: inherit;
+    /* width: var(--hero_width); */
+    /* position: absolute; */
+    /* right: 0px; */
+    /* padding: 100px; */
+    /* padding-top: 0px; */
 }
 
 .menu {
@@ -107,20 +206,20 @@ main {
 .header {
     font-size: var(--header_font-size); /*34px*/
     text-align: center;
-    width: 100%;
+    width: var(--header_width); /*100%*/
     color:hsl(0, 0%, 8%);
     margin-top: 25px;
 }
 
 .description {
     font-weight: 500;
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: var(--description_padding); /*both 24px*/
+    padding-right: var(--description_padding);
     line-height: 27px;
     font-size: var(--description_font-size);/*32*/
     color: hsl(0, 0%, 41%);
     text-align: center;
-    width: 100%;
+    width: var(--description_width);
     padding-bottom: 25px;
 }
 
@@ -132,19 +231,23 @@ main {
     color: var(--almost-white);
     border-radius: 17.5px;
     font-size: 17.5px;
-    margin: auto;
+    /* margin: auto; */
     font-weight: 500;
     margin-bottom: 50px;
+    width: var(--btn-learn_width);
+    margin-left: var(--btn-learn_margin-left);
+    margin-right: var(--btn-learn_margin-right);
 }
 
 .sponsor {
     display: flex;
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
     justify-content: space-between;
     height: 37.5px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: var(--sponsor_padding); /*both 25px*/
+    padding-right: var(--sponsor_padding);
+    width: var(--sponsor_width);
 }
 
 .sidenav {
@@ -270,7 +373,7 @@ main {
 
 .panel {
     padding-left: 40px;
-    font-size: 17.5px;
+    font-size: 16px;
     color: var(--medium-gray);
     font-weight: 500;
 
@@ -304,7 +407,7 @@ main {
 }
 
 .company-inside {
-    font-size: 17.5px;
+    font-size: 16px;
     color: var(--medium-gray);
     font-weight: 500;
     padding-left: 40px;
