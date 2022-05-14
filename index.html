@@ -179,8 +179,15 @@
         r.style.setProperty('--sidenav-width', '0px');
         r.style.setProperty('--sidenav-right', '0px');
         console.log("removing active...");
+        acc[0].classList.remove("active");
         acc[0].nextElementSibling.classList.remove("active");
+        var arrow = acc[0].getElementsByClassName("icon-arrow-down");
+        arrow[0].classList.remove("rotateimg180");
+
+        acc[1].classList.remove("active");
         acc[1].nextElementSibling.classList.remove("active");
+        arrow = acc[1].getElementsByClassName("icon-arrow-down");
+        arrow[0].classList.remove("rotateimg180");
         isOpen = false;
       }
       console.log("width now: " + rs.getPropertyValue('--sidenav-width'));
@@ -204,7 +211,6 @@
       });
     }
 
-   
   </script>
 </body>
 </html>
