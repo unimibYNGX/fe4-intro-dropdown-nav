@@ -53,9 +53,60 @@
     --description_display: block;
     --description-desktop_display: none;
     --hero_width: 100%;
+
+    --sidenav-desktop_display: none;
+
+    --features-inside-sidenav-desktop_position: none;
+    --features-inside-sidenav-desktop_display: none;
+    --company-inside-sidenav-desktop_display: none;
+    --company-inside-sidenav-desktop_position: none;
+    --block_display: none;
+    --sidenav-items_padding-top: 20px;
+    --sidenav-items_padding-bottom: 20px;
+    --first-row_align-items: none;
+    --img-logo_margin-top: 0px;
+    --logo_position: relative;
+    --row_leftright: none;
+    --txt-features_padding-right: 30px;
+    --txt-company_padding-right: 26px;
+    --icon-arrow-down_margin-top: 5px;
 }
 
 @media only screen and (min-width: 1100px) {
+    * {
+        --sidenav-items_font-size: 15px;
+        --sidenav-items_padding-top: 0px;
+        --block_display: block;
+        --first-row_align-items: center;
+        --img-logo_margin-top: 5px;
+        --row_leftright: flex;
+        --logo_position: absolute;
+        --txt-features_padding-right: 5px;
+        --txt-company_padding-right: 5px;
+        --icon-arrow-down_margin-top: 1.5px;
+    }
+/* 
+    .features.sidenav-desktop {
+        flex-wrap: wrap;
+    } */
+
+    .block1, .block2 {
+        --block-display: block;
+    }
+
+    .features.sidenav-desktop, .features-inside.sidenav-desktop,
+    .company-inside.sidenav-desktop, .company.sidenav-desktop, .careers.sidenav-desktop,
+    .about.sidenav-desktop, .btn-login.sidenav-desktop, .btn-register.sidenav-desktop {
+        --sidenav-desktop_display: flex;
+    }
+    .company-inside.sidenav-desktop {
+        --company-inside-sidenav-desktop_position: absolute;
+        --company-inside-sidenav-desktop_display: block;
+    }
+    .features-inside.sidenav-desktop {
+        --features-inside-sidenav-desktop_position: absolute;
+        --features-inside-sidenav-desktop_display: block
+    }
     .img-logo {
         --img-logo_width: 90px;
     }
@@ -90,9 +141,6 @@
         --sponsor_width: 100%;
         --sponsor_padding: 0px;
     }
-    .hero {
-        /* --hero_width: 500px; */
-    }
     .desktop {
         --desktop_width: 100%;
         --desktop_padding: 50px;
@@ -115,6 +163,40 @@
     .left {
         --left_margin: 0;
     }
+}
+.row-left, .row-right {
+    display: var(--row_leftright); /*flex for desktop*/
+    align-items: center;
+}
+.row-left {
+    margin-left: 125px;
+}
+.about.sidenav-desktop, .careers.sidenav-desktop, .block2 {
+    margin-left: 15px;
+}
+.btn-login.sidenav-desktop {
+    padding: 0;
+    padding-right: 20px;
+}
+.btn-register.sidenav-desktop {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.block1, .block2 {
+    display: var(--block_display);
+}
+.features.sidenav-desktop, .features-inside.sidenav-desktop,
+.company-inside.sidenav-desktop, .company.sidenav-desktop, .careers.sidenav-desktop,
+.about.sidenav-desktop, .btn-login.sidenav-desktop, .btn-register.sidenav-desktop {
+    display: var(--sidenav-desktop_display); /*none !important*/
+}
+.features-inside.sidenav-desktop {
+    position: var(--features-inside-sidenav-desktop_position);
+    display: var(--features-inside-sidenav-desktop_display);
+}
+.company-inside.sidenav-desktop {
+    position: var(--company-inside-sidenav-desktop_position);
+    display: var(--company-inside-sidenav-desktop_display);
 }
 
 .hero {
@@ -151,8 +233,6 @@
     padding-left: var(--desktop_padding-left);
     padding-right: var(--desktop_padding-right);
     justify-content: space-between;
-    /* padding-right: 0; */
-    /* padding-left: 150px; */
 }
 
 .img-menu {
@@ -167,6 +247,7 @@
 .img-logo {
     width: var(--img-logo_width);
     height: var(--img-logo_height);
+    margin-top: var(--img-logo_margin-top); /*10px for DESKTOP, 0px for mobile*/
 }
 
 .img-hero-mobile {
@@ -182,12 +263,10 @@
 
 html, body {
     width: 100%;
-    /* position: relative; */
     background-color: var(--almost-white);
     padding: 0;
     height: 100%;
     margin: 0;
-    /* position: fixed; */
 }
 
 main {
@@ -199,7 +278,6 @@ main {
     display: flex;
     flex-wrap: wrap;
     height: 100%;
-    /* width: 615px; */
     width: inherit;
 }
 
@@ -210,10 +288,13 @@ main {
     padding: 20px;
     padding-top: 25px;
     padding-bottom: 25px;
+
+    align-items: var(--first-row_align-items); /*center for mobile*/
 }
 
 .logo {
     width: fit-content;
+    position: var(--logo_position);
 }
 
 .menu {
@@ -257,7 +338,6 @@ main {
     color: var(--almost-white);
     border-radius: 17.5px;
     font-size: 17.5px;
-    /* margin: auto; */
     font-weight: 500;
     margin-bottom: var(--btn-learn_margin-bottom); /*mobile 50px*/
     width: var(--btn-learn_width);
@@ -267,7 +347,6 @@ main {
 
 .sponsor {
     display: flex;
-    /* width: 100%; */
     text-align: center;
     justify-content: space-between;
     height: 37.5px;
@@ -281,7 +360,6 @@ main {
     background-color: var(--almost-white);
     height: 100%;
     width: var(--sidenav-width);
-    /* right: var(--sidenav-right); */
     transition: 0.5s ease;
     right: 0;
     overflow-x: hidden;
@@ -289,7 +367,6 @@ main {
 
 .close {
     padding-top: 20px;
-    /* padding-bottom: 20px; */
     width: fit-content;
     height: fit-content;
     margin-left: 195px;
@@ -304,8 +381,9 @@ main {
     color:hsl(0, 0%, 41%);
     font-size: var(--sidenav-items_font-size); /*27.5px*/
     font-weight: 500;
-    padding-top: 20px;
-    padding-left: 30px;
+    padding-top: var(--sidenav-items_padding-top); /*20px*/
+    padding-left: var(--sidenav-items_padding-bottom); /*30px*/
+    height: fit-content;
 }
 
 .features, .company {
@@ -313,17 +391,17 @@ main {
 }
 
 .txt-features {
-    padding-right: 30px;
+    padding-right: var(--txt-features_padding-right); /*30px mobile*/
 }
 
 .txt-company {
-    padding-right: 26px;;
+    padding-right: var(--txt-company_padding-right); /*26px mobile*/
 }
 
 .icon-arrow-down {
     width: 18px;
     height: 10px;
-    margin-top: 5px;
+    margin-top: var(--icon-arrow-down_margin-top); /*5px for mobile*/
 }
 
 .btns {
@@ -333,9 +411,6 @@ main {
 }
 
 .btns .btn-login{
-    /* padding: 0; */
-    /* width: fit-content; */
-    /* width: 200px; */
     text-align: center;
     margin-bottom: 5px;
     margin-left: 24px;
@@ -347,23 +422,17 @@ main {
 }
 
 .btn-login {
-    /* font-size: var(--sidenav-items_font-size); 32px */
     font-size: var(--sidenav-items_font-size);
     padding: 15px;
-    /* margin: 40px; */
-    /* margin-top: 35px; */
     padding-left: 70px;
     padding-right: 70px;
     border-radius: 20px;
     margin-left: 10px;
-    /* border: 2px solid var(--medium-gray); */
 }
 
 .btn-register {
     font-size: var(--sidenav-items_font-size);
     padding: 15px;
-    /* margin: 40px; */
-    /* margin-top: 35px; */
     padding-left: 70px;
     padding-right: 70px;
     border-radius: 20px;
@@ -379,7 +448,6 @@ main {
     cursor: pointer;
 }
 
-/*inside features*/
 .icon-todolist {
     width: 24px;
     height: 27.42px;
@@ -420,7 +488,6 @@ main {
 
 .todolist, .calendar, .reminders, .planning {
     display: flex;
-    /* flex-wrap: wrap; */
     width: 100%;
     margin-top: 20px;
 }
@@ -428,7 +495,6 @@ main {
 .txt-todolist, .txt-calendar, .txt-reminders, .txt-planning {
     margin-top: 6px;
     margin-left: 20px;
-    /* position: absolute; */
     white-space: nowrap;
 }
 
