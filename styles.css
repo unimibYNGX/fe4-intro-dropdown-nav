@@ -3,6 +3,7 @@
 * {
     font-family: Epilogue, sans-serif;
     user-select: none;
+
 }
 
 .attribution {
@@ -78,7 +79,7 @@
     --logo_top: auto;
     --logo_left: auto;
     --panel_box-shadow: none;
-    --btn-learn_position: relative;
+    --btn-learn_position: none;
     --sponsor_margin-top: auto;
 }
 
@@ -614,23 +615,33 @@ main {
     -webkit-filter: grayscale(100%);
     transition: 0.2s ease;
 }
-.features:hover, .features.active, .company:hover, .company.active,
-.careers:hover, .about:hover,
-.btn-login:hover, .btn-register:hover,
-.txt-todolist:hover, .txt-calendar:hover, .txt-reminders:hover, .txt-planning:hover,
-.history:hover, .ourteam:hover, .blog:hover
+.features.active, .company.active
 {
     color: var(--almost-black);
     opacity: 1;
     filter: grayscale(100%);
     -webkit-filter: grayscale(100%);
 }
-.btn-learn:hover {
-    background-color: var(--almost-white);
-    color: var(--almost-black);
-    font-weight: 500;
-    border: 1px solid var(--almost-black);
-}
 .btn-learn {
     transition: 0.3s ease;
+}
+
+@media (hover: hover) {
+    .features:hover, .features.active, .company:hover, .company.active,
+    .careers:hover, .about:hover,
+    .btn-login:hover, .btn-register:hover,
+    .txt-todolist:hover, .txt-calendar:hover, .txt-reminders:hover, .txt-planning:hover,
+    .history:hover, .ourteam:hover, .blog:hover
+    {
+        color: var(--almost-black);
+        opacity: 1;
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+    }
+    .btn-learn:hover {
+        background-color: var(--almost-white);
+        color: var(--almost-black);
+        font-weight: 500;
+        border: 1px solid var(--almost-black);
+    }
 }
