@@ -69,7 +69,7 @@
               <img src="images/icon-arrow-down.svg" class="icon-arrow-down" alt="">
             </div>
             <div class="features-inside panel sidenav-desktop">
-              <div class="todolist">
+              <div class="todolist sidenav-desktop">
                 <img class="icon-todolist" src="images/icon-todo.svg" alt="">
                 <div class="txt-todolist">Todo List</div>
               </div>
@@ -189,10 +189,15 @@
     }
     
     var acc = document.getElementsByClassName("accordion");
+    var arrows = document.getElementsByClassName("icon-arrow-down");
     var i;
 
     for(i = 0; i < acc.length; i++) {
       acc[i].addEventListener("click", function() {
+        var arrow = this.getElementsByClassName("icon-arrow-down");
+        arrow[0].classList.toggle("rotateimg180");
+
+
         this.classList.toggle("active");
         var panel = this.nextElementSibling;
         panel.classList.toggle("active");

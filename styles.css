@@ -69,11 +69,24 @@
     --row_leftright: none;
     --txt-features_padding-right: 30px;
     --txt-company_padding-right: 26px;
-    --icon-arrow-down_margin-top: 5px;
+    --icon-arrow-down_margin-top: 3px;
+    --panel_background-color: none;
+    --panel_padding-left: 40px;
+    --panel_padding: 0px;
+    --panel_font-size: 16px;
+    --panel_border-radius: 0px;
+    --logo_top: auto;
+    --logo_left: auto;
+    --panel_box-shadow: none;
+    --btn-learn_position: relative;
+    --sponsor_margin-top: auto;
 }
 
 @media only screen and (min-width: 1100px) {
     * {
+        --sponsor_margin-top: 180px;
+        --btn-learn_position: absolute;
+        --panel_box-shadow: 0px 20px 40px lightgray;
         --sidenav-items_font-size: 15px;
         --sidenav-items_padding-top: 0px;
         --block_display: block;
@@ -84,11 +97,14 @@
         --txt-features_padding-right: 5px;
         --txt-company_padding-right: 5px;
         --icon-arrow-down_margin-top: 1.5px;
+        --panel_background-color: white;
+        --panel_padding-left: 0px;
+        --panel_padding: 20px;
+        --panel_font-size: 14px;
+        --panel_border-radius: 12px;
+        --logo_top: 34px;
+        --logo_left: 35px;
     }
-/* 
-    .features.sidenav-desktop {
-        flex-wrap: wrap;
-    } */
 
     .block1, .block2 {
         --block-display: block;
@@ -140,6 +156,7 @@
     .sponsor {
         --sponsor_width: 100%;
         --sponsor_padding: 0px;
+
     }
     .desktop {
         --desktop_width: 100%;
@@ -164,6 +181,82 @@
         --left_margin: 0;
     }
 }
+
+.rotateimg180 {
+    -webkit-transform:rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.rotateimg180counter {
+    -webkit-transform:rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+
+.todolist.sidenav-desktop{
+    margin-top: 0px;
+}
+.features-inside.panel {
+    padding-left: 40px !important;
+}
+.features-inside.panel.sidenav-desktop{
+    margin-top: 15px;
+    left: 104px;
+    padding-left: 20px !important;
+}
+.company-inside.panel.sidenav-desktop{
+    padding-left: 20px;
+    padding-top: 5.5px;
+    margin-top: 15px;
+    font-size: 14px;
+    padding-bottom: 5.5px;
+    line-height: 20px;
+    left: 290px;
+}
+
+.panel { 
+    padding-left: var(--panel_padding-left); /*40px mob*/
+    padding: var(--panel_padding);
+    
+    font-size: var(--panel_font-size); /*16px for mobile*/
+    color: var(--medium-gray);
+    font-weight: 500;
+
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+
+    background-color: var(--panel_background-color); /*black desktop, null for mobile*/
+    border-radius: var(--panel_border-radius);
+    box-shadow: var(--panel_box-shadow); /*desktop is 0px 20px 40px lightgray*/
+}
+.sidenav-desktop .todolist .icon-todolist {
+    width: 15px;
+    height: 17px;
+    margin-top: 4px;
+}
+.sidenav-desktop .calendar .icon-calendar {
+    width: 16px;
+    height: 16px;
+    margin-top: 4px;
+}
+.sidenav-desktop .reminders .icon-reminders {
+    width: 15px;
+    height: 20px;
+    margin-top: 2px;
+}
+.sidenav-desktop .planning .icon-planning {
+    width: 16px;
+    height: 16px;
+    margin-top: 4px;
+}
+
 .row-left, .row-right {
     display: var(--row_leftright); /*flex for desktop*/
     align-items: center;
@@ -295,6 +388,8 @@ main {
 .logo {
     width: fit-content;
     position: var(--logo_position);
+    top: var(--logo_top);
+    left: var(--logo_left);
 }
 
 .menu {
@@ -343,6 +438,7 @@ main {
     width: var(--btn-learn_width);
     margin-left: var(--btn-learn_margin-left);
     margin-right: var(--btn-learn_margin-right);
+    position: var(--btn-learn_position);
 }
 
 .sponsor {
@@ -353,6 +449,7 @@ main {
     padding-left: var(--sponsor_padding); /*both 25px*/
     padding-right: var(--sponsor_padding);
     width: var(--sponsor_width);
+    margin-top: var(--sponsor_margin-top);
 }
 
 .sidenav {
@@ -402,6 +499,10 @@ main {
     width: 18px;
     height: 10px;
     margin-top: var(--icon-arrow-down_margin-top); /*5px for mobile*/
+    transition: 0.2s ease;
+    /* opacity: 0.66;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%); */
 }
 
 .btns {
@@ -465,18 +566,6 @@ main {
     height: 24px;
 }
 
-.panel {
-    padding-left: 40px;
-    font-size: 16px;
-    color: var(--medium-gray);
-    font-weight: 500;
-
-    overflow: hidden;
-    max-height: 0;
-    opacity: 0;
-    transition: all 0.5s ease;
-}
-
 .panel.active{
     opacity: 1;
     max-height: 186.81px;
@@ -513,4 +602,35 @@ main {
 
 .blog {
     margin-bottom: 15px;
+}
+
+.features, .company, .careers, .about, .btn-login, .btn-register, 
+.txt-todolist, .txt-calendar, .txt-reminders, .txt-planning, 
+.history, .ourteam, .blog 
+{
+    color: var(--almost-black);
+    opacity: 0.66;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    transition: 0.2s ease;
+}
+.features:hover, .features.active, .company:hover, .company.active,
+.careers:hover, .about:hover,
+.btn-login:hover, .btn-register:hover,
+.txt-todolist:hover, .txt-calendar:hover, .txt-reminders:hover, .txt-planning:hover,
+.history:hover, .ourteam:hover, .blog:hover
+{
+    color: var(--almost-black);
+    opacity: 1;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+.btn-learn:hover {
+    background-color: var(--almost-white);
+    color: var(--almost-black);
+    font-weight: 500;
+    border: 1px solid var(--almost-black);
+}
+.btn-learn {
+    transition: 0.3s ease;
 }
