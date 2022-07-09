@@ -1,216 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="styles.css">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
 
-  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  <div class="sidenav">
-    <div class="close" id="close" onclick="sidenav_toggle()"><img class="img-close" src="images/icon-close-menu.svg" alt=""></div>
-    <div class="features accordion">
-      <div class="txt-features">Features</div>
-      <img src="images/icon-arrow-down.svg" class="icon-arrow-down" alt="">
-    </div>
-    <div class="features-inside panel">
-      <div class="todolist">
-        <img class="icon-todolist" src="images/icon-todo.svg" alt="">
-        <div class="txt-todolist">Todo List</div>
-      </div>
-      <div class="calendar">
-        <img class="icon-calendar" src="images/icon-calendar.svg" alt="">
-        <div class="txt-calendar">Calendar</div>
-      </div>
-      <div class="reminders">
-        <img class="icon-reminders" src="images/icon-reminders.svg" alt="">
-        <div class="txt-reminders">Reminders</div>
-      </div>
-      <div class="planning">
-        <img class="icon-planning" src="images/icon-planning.svg" alt="">
-        <div class="txt-planning">Planning</div>
-      </div>
-    </div>
-    <div class="company accordion">
-      <div class="txt-company">Company</div>
-      <img src="images/icon-arrow-down.svg" class="icon-arrow-down" alt="">
-    </div>
-    <div class="company-inside panel">
-      <div class="history">History</div>
-      <div class="ourteam">Our Team</div>
-      <div class="blog">Blog</div>
-    </div>
-    <div class="careers">Careers</div>
-    <div class="about">About</div>
-    <div class="btns">
-      <div class="btn-login">Login</div>
-      <div class="btn-register"><div class="txt-register">Register</div></div>
-    </div>
-  </div>
-
-  <main>
-    <div class="container">
-      <div class="first-row">
-        <div class="logo"><img src="images/logo.svg" class="img-logo" alt=""></div>
-        <div class="menu" id="menu" onclick="sidenav_toggle()"><img class="img-menu" src="images/icon-menu.svg" alt=""></div>
-        <div class="row-left">
-          <div class="block1">
-            <div class="features accordion sidenav-desktop">
-              <div class="txt-features">Features</div>
-              <img src="images/icon-arrow-down.svg" class="icon-arrow-down" alt="">
-            </div>
-            <div class="features-inside panel sidenav-desktop">
-              <div class="todolist sidenav-desktop">
-                <img class="icon-todolist" src="images/icon-todo.svg" alt="">
-                <div class="txt-todolist">Todo List</div>
-              </div>
-              <div class="calendar sidenav-desktop">
-                <img class="icon-calendar " src="images/icon-calendar.svg" alt="">
-                <div class="txt-calendar">Calendar</div>
-              </div>
-              <div class="reminders sidenav-desktop">
-                <img class="icon-reminders" src="images/icon-reminders.svg" alt="">
-                <div class="txt-reminders">Reminders</div>
-              </div>
-              <div class="planning sidenav-desktop">
-                <img class="icon-planning" src="images/icon-planning.svg" alt="">
-                <div class="txt-planning">Planning</div>
-              </div>
-            </div>
-          </div>
-          <div class="block2">
-            <div class="company accordion sidenav-desktop">
-              <div class="txt-company">Company</div>
-              <img src="images/icon-arrow-down.svg" class="icon-arrow-down" alt="">
-            </div>
-            <div class="company-inside panel sidenav-desktop">
-              <div class="history">History</div>
-              <div class="ourteam">Our Team</div>
-              <div class="blog">Blog</div>
-            </div>
-          </div>
-          <div class="careers sidenav-desktop">Careers</div>
-          <div class="about sidenav-desktop">About</div>
-        </div>
-        <div class="row-right">
-          <div class="btn-login sidenav-desktop">Login</div>
-          <div class="btn-register sidenav-desktop"><div class="txt-register">Register</div></div>
-        </div>
-      </div>
-
-      <div class="hero">
-        <img src="images/image-hero-mobile.png" class="img-hero-mobile" alt="">
-        <!-- <img src="images/image-hero-desktop.png" alt="" class="img-hero-desktop"> -->
-      </div>
-      <div class="desktop">
-        <div class="left">
-          <div class="header">
-            <div class="header-mobile">
-              <h1>Make remote work</h1>
-            </div>
-            <div class="header-desktop">
-              <h1>Make<br>remote work</h1>
-            </div>
-          </div>
-          <div class="description">
-            Get your team in sync, no matter your <br>
-            location. Streamline processes, create <br>
-            team rituals, and watch productivity soar.
-          </div>
-          <div class="description description-desktop">
-            Get your team in sync, no matter your location. <br>
-            Streamline processes, create team rituals, and <br>
-            watch productivity soar.
-          </div>
-          <div class="btn-learn"><div class="txt-learn">Learn more</div></div>
-          <div class="sponsor">
-            <img class="img-sponsor" src="images/client-databiz.svg" alt="">
-            <img class="img-sponsor" src="images/client-audiophile.svg" alt="">
-            <img class="img-sponsor" src="images/client-meet.svg" alt="">
-            <img class="img-sponsor" src="images/client-maker.svg" alt="">
-          </div>
-        </div>
-        <div class="right">
-          <div class="hero">
-            <img src="images/image-hero-desktop.png" alt="" class="img-hero-desktop">
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-
-  <script>
-    var r = document.querySelector(':root');
-
-    var isOpen = false;
-
-    function myFunction_get() {
-      var rs = getComputedStyle(r);
-      console.log("The value of --sidenav-width is: " + rs.getPropertyValue('--sidenav-width'));
-    } /*works!*/
-
-    function sidenav_toggle() {
-      var rs = getComputedStyle(r); 
-      var acc = document.getElementsByClassName("accordion");
-      
-      console.clear();
-      console.log("width before: " + rs.getPropertyValue('--sidenav-width'));
-      console.log("right before: " + rs.getPropertyValue('--sidenav-right'));
-      if(!isOpen) {
-        r.style.setProperty('--sidenav-width', '240px');
-        r.style.setProperty('--sidenav-right', '0px');
-        isOpen = true;
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
       }
-      else{
-        r.style.setProperty('--sidenav-width', '0px');
-        r.style.setProperty('--sidenav-right', '0px');
-        console.log("removing active...");
-        acc[0].classList.remove("active");
-        acc[0].nextElementSibling.classList.remove("active");
-        var arrow = acc[0].getElementsByClassName("icon-arrow-down");
-        arrow[0].classList.remove("rotateimg180");
-
-        acc[1].classList.remove("active");
-        acc[1].nextElementSibling.classList.remove("active");
-        arrow = acc[1].getElementsByClassName("icon-arrow-down");
-        arrow[0].classList.remove("rotateimg180");
-        isOpen = false;
+      .attribution a {
+        color: hsl(228, 45%, 44%);
       }
-      console.log("width now: " + rs.getPropertyValue('--sidenav-width'));
-      console.log("right now: " + rs.getPropertyValue('--sidenav-right'));
-      // var x = document.getElementById('menu');
-    }
+    </style>
+  </head>
+  <body>
+    <div class="sidenav">
+      <div class="close" id="close" onclick="sidenav_toggle()">
+        <img class="img-close" src="images/icon-close-menu.svg" alt="" />
+      </div>
+      <div class="features accordion">
+        <div class="txt-features">Features</div>
+        <img src="images/icon-arrow-down.svg" class="icon-arrow-down" alt="" />
+      </div>
+      <div class="features-inside panel">
+        <div class="todolist">
+          <img class="icon-todolist" src="images/icon-todo.svg" alt="" />
+          <div class="txt-todolist">Todo List</div>
+        </div>
+        <div class="calendar">
+          <img class="icon-calendar" src="images/icon-calendar.svg" alt="" />
+          <div class="txt-calendar">Calendar</div>
+        </div>
+        <div class="reminders">
+          <img class="icon-reminders" src="images/icon-reminders.svg" alt="" />
+          <div class="txt-reminders">Reminders</div>
+        </div>
+        <div class="planning">
+          <img class="icon-planning" src="images/icon-planning.svg" alt="" />
+          <div class="txt-planning">Planning</div>
+        </div>
+      </div>
+      <div class="company accordion">
+        <div class="txt-company">Company</div>
+        <img src="images/icon-arrow-down.svg" class="icon-arrow-down" alt="" />
+      </div>
+      <div class="company-inside panel">
+        <div class="history">History</div>
+        <div class="ourteam">Our Team</div>
+        <div class="blog">Blog</div>
+      </div>
+      <div class="careers">Careers</div>
+      <div class="about">About</div>
+      <div class="btns">
+        <div class="btn-login">Login</div>
+        <div class="btn-register"><div class="txt-register">Register</div></div>
+      </div>
+    </div>
+
+    <main>
+      <div class="container">
+        <div class="first-row">
+          <div class="logo">
+            <img src="images/logo.svg" class="img-logo" alt="" />
+          </div>
+          <div class="menu" id="menu" onclick="sidenav_toggle()">
+            <img class="img-menu" src="images/icon-menu.svg" alt="" />
+          </div>
+          <div class="row-left">
+            <div class="block1">
+              <div class="features accordion sidenav-desktop">
+                <div class="txt-features">Features</div>
+                <img
+                  src="images/icon-arrow-down.svg"
+                  class="icon-arrow-down"
+                  alt=""
+                />
+              </div>
+              <div class="features-inside panel sidenav-desktop">
+                <div class="todolist sidenav-desktop">
+                  <img
+                    class="icon-todolist"
+                    src="images/icon-todo.svg"
+                    alt=""
+                  />
+                  <div class="txt-todolist">Todo List</div>
+                </div>
+                <div class="calendar sidenav-desktop">
+                  <img
+                    class="icon-calendar"
+                    src="images/icon-calendar.svg"
+                    alt=""
+                  />
+                  <div class="txt-calendar">Calendar</div>
+                </div>
+                <div class="reminders sidenav-desktop">
+                  <img
+                    class="icon-reminders"
+                    src="images/icon-reminders.svg"
+                    alt=""
+                  />
+                  <div class="txt-reminders">Reminders</div>
+                </div>
+                <div class="planning sidenav-desktop">
+                  <img
+                    class="icon-planning"
+                    src="images/icon-planning.svg"
+                    alt=""
+                  />
+                  <div class="txt-planning">Planning</div>
+                </div>
+              </div>
+            </div>
+            <div class="block2">
+              <div class="company accordion sidenav-desktop">
+                <div class="txt-company">Company</div>
+                <img
+                  src="images/icon-arrow-down.svg"
+                  class="icon-arrow-down"
+                  alt=""
+                />
+              </div>
+              <div class="company-inside panel sidenav-desktop">
+                <div class="history">History</div>
+                <div class="ourteam">Our Team</div>
+                <div class="blog">Blog</div>
+              </div>
+            </div>
+            <div class="careers sidenav-desktop">Careers</div>
+            <div class="about sidenav-desktop">About</div>
+          </div>
+          <div class="row-right">
+            <div class="btn-login sidenav-desktop">Login</div>
+            <div class="btn-register sidenav-desktop">
+              <div class="txt-register">Register</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero">
+          <img
+            src="images/image-hero-mobile.png"
+            class="img-hero-mobile"
+            alt=""
+          />
+          <!-- <img src="images/image-hero-desktop.png" alt="" class="img-hero-desktop"> -->
+        </div>
+        <div class="desktop">
+          <div class="left">
+            <div class="header">
+              <div class="header-mobile">
+                <h1>Make remote work</h1>
+              </div>
+              <div class="header-desktop">
+                <h1>Make<br />remote work</h1>
+              </div>
+            </div>
+            <div class="description">
+              Get your team in sync, no matter your <br />
+              location. Streamline processes, create <br />
+              team rituals, and watch productivity soar.
+            </div>
+            <div class="description description-desktop">
+              Get your team in sync, no matter your location. <br />
+              Streamline processes, create team rituals, and <br />
+              watch productivity soar.
+            </div>
+            <div class="btn-learn"><div class="txt-learn">Learn more</div></div>
+            <div class="sponsor">
+              <img class="img-sponsor" src="images/client-databiz.svg" alt="" />
+              <img
+                class="img-sponsor"
+                src="images/client-audiophile.svg"
+                alt=""
+              />
+              <img class="img-sponsor" src="images/client-meet.svg" alt="" />
+              <img class="img-sponsor" src="images/client-maker.svg" alt="" />
+            </div>
+          </div>
+          <div class="right">
+            <div class="hero">
+              <img
+                src="images/image-hero-desktop.png"
+                alt=""
+                class="img-hero-desktop"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
     
-    var acc = document.getElementsByClassName("accordion");
-    var arrows = document.getElementsByClassName("icon-arrow-down");
-    var i;
-
-    for(i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        var arrow = this.getElementsByClassName("icon-arrow-down");
-        arrow[0].classList.toggle("rotateimg180");
-
-
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        panel.classList.toggle("active");
-      });
-    }
-
-  </script>
-</body>
+    <script src="js/index.js"></script>
+  </body>
 </html>
